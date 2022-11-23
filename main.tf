@@ -41,15 +41,12 @@ module "iam" {
 }
 
 module "tls" {
-  source                   = "./modules/tls"
-  common_tags              = local.tags
-  resource_group           = azurerm_resource_group.vault
-  resource_name_prefix     = local.resource_name_prefix
-  dns_zone_name            = var.dns_zone_name
-  dns_zone_rg_name         = var.dns_zone_rg_name
-  acme_azure_client_secret = var.azure_client_secret
-  vault_cluster_host_name  = "vault"
-  acme_email_address       = "devops@verituity.com"
+  source                  = "./modules/tls"
+  common_tags             = local.tags
+  resource_group          = azurerm_resource_group.vault
+  resource_name_prefix    = local.resource_name_prefix
+  vault_cluster_host_name = "vault"
+  dns_zone_name           = "dev.verituityplatform.com"
 }
 
 module "keyvault" {

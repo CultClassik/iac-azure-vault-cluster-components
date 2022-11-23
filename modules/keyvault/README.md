@@ -25,9 +25,10 @@ No modules.
 |------|------|
 | [azurerm_key_vault.akv](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
 | [azurerm_key_vault_access_policy.owner](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
-| [azurerm_key_vault_certificate.lb](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_certificate.vault_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_key.vault](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key) | resource |
+| [azurerm_key_vault_secret.ssh_key_bastion](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
+| [azurerm_key_vault_secret.ssh_key_nodes](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
 | [azurerm_key_vault_secret.vault](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
 | [random_id.key_vault_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
@@ -36,18 +37,18 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_bastion_ssh_private_key"></a> [bastion\_ssh\_private\_key](#input\_bastion\_ssh\_private\_key) | ssh private key for the bastion host | `string` | n/a | yes |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | (Optional) Map of common tags for all taggable resources | `map(string)` | `{}` | no |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Azure resource group in which resources will be deployed | <pre>object({<br>    name     = string<br>    location = string<br>  })</pre> | n/a | yes |
 | <a name="input_resource_name_prefix"></a> [resource\_name\_prefix](#input\_resource\_name\_prefix) | Prefix applied to resource names | `string` | `"dev"` | no |
 | <a name="input_user_supplied_key_vault_key_name"></a> [user\_supplied\_key\_vault\_key\_name](#input\_user\_supplied\_key\_vault\_key\_name) | (Optional) User-provided Key Vault Key name. Providing this will disable the generation of a Key Vault Key used for Vault auto-unseal | `string` | `null` | no |
-| <a name="input_vault_lb_certificate"></a> [vault\_lb\_certificate](#input\_vault\_lb\_certificate) | Contents of TLS certificate used by Vault cluster load balancer (PFX format) | `any` | n/a | yes |
+| <a name="input_vault_nodes_ssh_private_key"></a> [vault\_nodes\_ssh\_private\_key](#input\_vault\_nodes\_ssh\_private\_key) | ssh private key for the vault cluster nodes | `string` | n/a | yes |
 | <a name="input_vault_server_certificate"></a> [vault\_server\_certificate](#input\_vault\_server\_certificate) | Contents of TLS certificate used by Vault cluster nodes (PFX format) | `any` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_akv_secret_id_vault_lb_cert"></a> [akv\_secret\_id\_vault\_lb\_cert](#output\_akv\_secret\_id\_vault\_lb\_cert) | Secret ID of AKV Certificate for Vault load balancer |
 | <a name="output_akv_secret_id_vault_server_cert"></a> [akv\_secret\_id\_vault\_server\_cert](#output\_akv\_secret\_id\_vault\_server\_cert) | Secret ID of AKV Certificate for Vault nodes |
 | <a name="output_akv_secret_id_vault_vm_tls"></a> [akv\_secret\_id\_vault\_vm\_tls](#output\_akv\_secret\_id\_vault\_vm\_tls) | Secret ID of AKV secret for Vault Cluster nodes TLS certificate |
 | <a name="output_key_vault_id"></a> [key\_vault\_id](#output\_key\_vault\_id) | Key Vault ID |

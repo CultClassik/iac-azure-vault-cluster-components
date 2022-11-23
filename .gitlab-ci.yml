@@ -42,9 +42,9 @@ terraform_plan:
   variables:
     TF_VAR_az_sub_id: $ARM_SUBSCRIPTION_ID_CAF_MANAGEMENT
     TF_VARS_FILE: nonprod
-    TF_HTTP_ADDRESS: https://gitlab.com/api/v4/projects/41317571/terraform/state/nonprod
-    TF_HTTP_LOCK_ADDRESS: https://gitlab.com/api/v4/projects/41317571/terraform/state/nonprod/lock
-    TF_HTTP_UNLOCK_ADDRESS: https://gitlab.com/api/v4/projects/41317571/terraform/state/nonprod/lock
+    TF_HTTP_ADDRESS: "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/terraform/state/nonprod"
+    TF_HTTP_LOCK_ADDRESS: "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/terraform/state/nonprod/lock"
+    TF_HTTP_UNLOCK_ADDRESS: "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/terraform/state/nonprod/lock"
 
 # -----------------------------------------------------------------------------
 #                                    Apply - NONPROD
@@ -61,6 +61,6 @@ terraform_apply:
   variables:
     TF_VAR_az_sub_id: $ARM_SUBSCRIPTION_ID_CAF_MANAGEMENT
     TF_VARS_FILE: nonprod
-    TF_HTTP_ADDRESS: https://gitlab.com/api/v4/projects/41317571/terraform/state/nonprod
-    TF_HTTP_LOCK_ADDRESS: https://gitlab.com/api/v4/projects/41317571/terraform/state/nonprod/lock
-    TF_HTTP_UNLOCK_ADDRESS: https://gitlab.com/api/v4/projects/41317571/terraform/state/nonprod/lock
+    TF_HTTP_ADDRESS: "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/terraform/state/nonprod"
+    TF_HTTP_LOCK_ADDRESS: "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/terraform/state/nonprod/lock"
+    TF_HTTP_UNLOCK_ADDRESS: "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/terraform/state/nonprod/lock"

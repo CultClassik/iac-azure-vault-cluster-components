@@ -1,13 +1,13 @@
-variable "environment" {}
+variable "environment" {
+  type = string
+  description = "production or nonprod"
+}
 
-variable "az_sub_id" {}
+variable "az_sub_id" {
+  type = string
+  description = "Azure subscription ID to create resources in"
+}
 
-variable "location" {}
-
-variable "dns_zone_name" {}
-
-variable "dns_zone_rg_name" {}
-
-variable "azure_client_secret" {
-  description = "For the ACME provider"
+variable "location" {
+  type = string
 }

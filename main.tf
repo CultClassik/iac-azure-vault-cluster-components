@@ -46,7 +46,7 @@ module "tls" {
   resource_group          = azurerm_resource_group.vault
   resource_name_prefix    = local.resource_name_prefix
   vault_cluster_host_name = "vault"
-  dns_zone_name           = "dev.verituityplatform.com"
+  dns_zone_name           = var.dns_zone_name
 }
 
 module "keyvault" {

@@ -11,3 +11,8 @@ variable "az_sub_id" {
 variable "location" {
   type = string
 }
+
+variable "dns_zone_name" {
+  type        = string
+  description = "The DNS zone name the Vault cluster will use"
+}

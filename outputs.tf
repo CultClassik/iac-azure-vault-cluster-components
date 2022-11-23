@@ -41,3 +41,8 @@ output "shared_san" {
 output "vault_server_cert_pfx" {
   value = module.tls.root_ca_pem
 }
+
+output "resource_group" {
+  description = "The resource group that was created for Vault cluster resources"
+  value       = azurerm_resource_group.vault
+}

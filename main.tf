@@ -12,6 +12,7 @@ locals {
     repo_name   = "iac-azure-vault-cluster",
     environment = var.environment,
     location    = var.location
+    product     = "vault"
   }
 }
 

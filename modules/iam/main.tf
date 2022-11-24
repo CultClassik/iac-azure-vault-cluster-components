@@ -1,14 +1,7 @@
-/**
- * Copyright © 2014-2022 HashiCorp, Inc.
- *
- * This Source Code is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this project, you can obtain one at http://mozilla.org/MPL/2.0/.
- *
- */
-
 data "azurerm_subscription" "current" {}
 
 locals {
-  resource_group_id = "/subscriptions/${data.azurerm_subscription.current.subscription_id}/resourceGroups/${var.resource_group.name}"
+  resource_base_name = "${var.resource_name_prefix}-%s-${var.common_tags.environment}-%s"
 }
 
 # Create identity for Vault nodes
@@ -17,7 +10,7 @@ resource "azurerm_user_assigned_identity" "vault" {
   count = var.user_supplied_vm_identity_id != null ? 0 : 1
 
   location            = var.resource_group.location
-  name                = "${var.resource_name_prefix}-vault"
+  name                = format(local.resource_base_name, "identity", "vault")
   resource_group_name = var.resource_group.name
   tags                = var.common_tags
 }
@@ -44,11 +37,11 @@ resource "azurerm_key_vault_access_policy" "vault_msi" {
 resource "azurerm_role_definition" "vault" {
   count = var.user_supplied_vm_identity_id != null ? 0 : 1
 
-  name  = "${var.resource_name_prefix}-vault-server"
-  scope = local.resource_group_id
+  name  = format(local.resource_base_name, "identity", "vault-server")
+  scope = var.resource_group.id
 
   assignable_scopes = [
-    local.resource_group_id,
+    var.resource_group.id,
   ]
 
   permissions {
@@ -63,14 +56,15 @@ resource "azurerm_role_assignment" "vault" {
 
   principal_id       = azurerm_user_assigned_identity.vault[0].principal_id
   role_definition_id = azurerm_role_definition.vault[0].role_definition_resource_id
-  scope              = local.resource_group_id
+  scope              = var.resource_group.id
 }
 
 resource "azurerm_user_assigned_identity" "load_balancer" {
   count = var.user_supplied_lb_identity_id != null ? 0 : 1
 
-  location            = var.resource_group.location
-  name                = "${var.resource_name_prefix}-vault-lb"
+  location = var.resource_group.location
+  name     = format(local.resource_base_name, "identity", "vault-lb")
+
   resource_group_name = var.resource_group.name
   tags                = var.common_tags
 }

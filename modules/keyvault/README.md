@@ -12,8 +12,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >=3.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | >=1.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.32.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
 
 ## Modules
 
@@ -25,6 +25,7 @@ No modules.
 |------|------|
 | [azurerm_key_vault.akv](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
 | [azurerm_key_vault_access_policy.owner](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_access_policy.readers](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_certificate.vault_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_key.vault](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key) | resource |
 | [azurerm_key_vault_secret.ssh_key_bastion](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
@@ -39,6 +40,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bastion_ssh_private_key"></a> [bastion\_ssh\_private\_key](#input\_bastion\_ssh\_private\_key) | ssh private key for the bastion host | `string` | n/a | yes |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | (Optional) Map of common tags for all taggable resources | `map(string)` | `{}` | no |
+| <a name="input_keyvault_readers"></a> [keyvault\_readers](#input\_keyvault\_readers) | Map of objects IDs to grant read access on certificates and secrets for.<br>Ex:<br>{ devops = "8f2fccad-59de-4699-8e72-33adea4bcc8b" } | `map(string)` | n/a | yes |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Azure resource group in which resources will be deployed | <pre>object({<br>    name     = string<br>    location = string<br>  })</pre> | n/a | yes |
 | <a name="input_resource_name_prefix"></a> [resource\_name\_prefix](#input\_resource\_name\_prefix) | Prefix applied to resource names | `string` | `"dev"` | no |
 | <a name="input_user_supplied_key_vault_key_name"></a> [user\_supplied\_key\_vault\_key\_name](#input\_user\_supplied\_key\_vault\_key\_name) | (Optional) User-provided Key Vault Key name. Providing this will disable the generation of a Key Vault Key used for Vault auto-unseal | `string` | `null` | no |

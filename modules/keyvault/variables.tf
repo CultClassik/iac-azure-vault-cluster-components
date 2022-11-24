@@ -44,3 +44,12 @@ variable "bastion_ssh_private_key" {
   type        = string
   description = "ssh private key for the bastion host"
 }
+
+variable "keyvault_readers" {
+  type        = map(string)
+  description = <<EOF
+Map of objects IDs to grant read access on certificates and secrets for.
+Ex:
+{ devops = "8f2fccad-59de-4699-8e72-33adea4bcc8b" }
+EOF
+}

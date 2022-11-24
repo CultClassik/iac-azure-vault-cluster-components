@@ -1,0 +1,15 @@
+resource "azurerm_key_vault_access_policy" "readers" {
+  for_each = var.keyvault_readers
+
+  key_vault_id = azurerm_key_vault.akv.id
+  object_id    = each.value
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+
+  certificate_permissions = [
+    "Get",
+  ]
+
+  secret_permissions = [
+    "Get",
+  ]
+}

@@ -40,11 +40,20 @@ variable "vault_nodes_ssh_private_key" {
   description = "ssh private key for the vault cluster nodes"
 }
 
+variable "vault_nodes_ssh_public_key" {
+  type        = string
+  description = "ssh public key for the vault cluster nodes"
+}
+
 variable "bastion_ssh_private_key" {
   type        = string
   description = "ssh private key for the bastion host"
 }
 
+variable "bastion_ssh_public_key" {
+  type        = string
+  description = "ssh public key for the bastion host"
+}
 variable "keyvault_readers" {
   type        = map(string)
   description = <<EOF

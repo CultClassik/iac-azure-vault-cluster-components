@@ -39,12 +39,14 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_bastion_ssh_private_key"></a> [bastion\_ssh\_private\_key](#input\_bastion\_ssh\_private\_key) | ssh private key for the bastion host | `string` | n/a | yes |
+| <a name="input_bastion_ssh_public_key"></a> [bastion\_ssh\_public\_key](#input\_bastion\_ssh\_public\_key) | ssh public key for the bastion host | `string` | n/a | yes |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | (Optional) Map of common tags for all taggable resources | `map(string)` | `{}` | no |
 | <a name="input_keyvault_readers"></a> [keyvault\_readers](#input\_keyvault\_readers) | Map of objects IDs to grant read access on certificates and secrets for.<br>Ex:<br>{ devops = "8f2fccad-59de-4699-8e72-33adea4bcc8b" } | `map(string)` | n/a | yes |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Azure resource group in which resources will be deployed | <pre>object({<br>    name     = string<br>    location = string<br>  })</pre> | n/a | yes |
 | <a name="input_resource_name_prefix"></a> [resource\_name\_prefix](#input\_resource\_name\_prefix) | Prefix applied to resource names | `string` | `"dev"` | no |
 | <a name="input_user_supplied_key_vault_key_name"></a> [user\_supplied\_key\_vault\_key\_name](#input\_user\_supplied\_key\_vault\_key\_name) | (Optional) User-provided Key Vault Key name. Providing this will disable the generation of a Key Vault Key used for Vault auto-unseal | `string` | `null` | no |
 | <a name="input_vault_nodes_ssh_private_key"></a> [vault\_nodes\_ssh\_private\_key](#input\_vault\_nodes\_ssh\_private\_key) | ssh private key for the vault cluster nodes | `string` | n/a | yes |
+| <a name="input_vault_nodes_ssh_public_key"></a> [vault\_nodes\_ssh\_public\_key](#input\_vault\_nodes\_ssh\_public\_key) | ssh public key for the vault cluster nodes | `string` | n/a | yes |
 | <a name="input_vault_server_certificate"></a> [vault\_server\_certificate](#input\_vault\_server\_certificate) | Contents of TLS certificate used by Vault cluster nodes (PFX format) | `any` | n/a | yes |
 
 ## Outputs

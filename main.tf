@@ -59,5 +59,7 @@ module "keyvault" {
   vault_server_certificate         = module.tls.vault_server_cert_pfx
   vault_nodes_ssh_private_key      = tls_private_key.vault_nodes.private_key_openssh
   bastion_ssh_private_key          = tls_private_key.bastion.private_key_openssh
+  vault_nodes_ssh_public_key       = tls_private_key.vault_nodes.public_key_openssh
+  bastion_ssh_public_key           = tls_private_key.bastion.public_key_openssh
   keyvault_readers                 = var.keyvault_readers
 }

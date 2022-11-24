@@ -7,9 +7,11 @@ resource "azurerm_key_vault_access_policy" "readers" {
 
   certificate_permissions = [
     "Get",
+    "List",
   ]
 
   secret_permissions = [
     "Get",
+    "List",
   ]
 }

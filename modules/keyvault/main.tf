@@ -76,3 +76,13 @@ resource "azurerm_key_vault_certificate" "vault_server" {
     }
   }
 }
+
+# -----------------------------------------------------------------------------
+# The private root CA PEM to be stored in AKV for use by AGW
+# -----------------------------------------------------------------------------
+resource "azurerm_key_vault_secret" "root_ca_pem" {
+  key_vault_id = azurerm_key_vault_access_policy.owner.key_vault_id
+  name         = "${var.resource_name_prefix}-vault-root-ca-pem"
+  tags         = var.common_tags
+  value        = var.root_ca_pem
+}

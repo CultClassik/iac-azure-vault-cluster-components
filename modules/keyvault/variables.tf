@@ -62,3 +62,8 @@ Ex:
 { devops = "8f2fccad-59de-4699-8e72-33adea4bcc8b" }
 EOF
 }
+
+variable "root_ca_pem" {
+  type        = string
+  description = "The private root CA PEM to be used by the AGW"
+}

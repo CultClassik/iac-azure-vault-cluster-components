@@ -78,6 +78,7 @@ terraform plan -var-file=variables/$VAULT_ENV.tfvars
 
 | Name | Description |
 |------|-------------|
+| <a name="output_akv_secret_id_root_ca_pem"></a> [akv\_secret\_id\_root\_ca\_pem](#output\_akv\_secret\_id\_root\_ca\_pem) | Secret ID of AKV secret for private root CA certificate |
 | <a name="output_akv_secret_id_vault_server_cert"></a> [akv\_secret\_id\_vault\_server\_cert](#output\_akv\_secret\_id\_vault\_server\_cert) | Secret ID of AKV Certificate for Vault nodes |
 | <a name="output_akv_secret_id_vault_vm_tls"></a> [akv\_secret\_id\_vault\_vm\_tls](#output\_akv\_secret\_id\_vault\_vm\_tls) | Secret ID of AKV secret for Vault Cluster nodes TLS certificate |
 | <a name="output_key_vault_id"></a> [key\_vault\_id](#output\_key\_vault\_id) | Key Vault ID |

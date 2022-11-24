@@ -34,6 +34,11 @@ output "root_ca_pem" {
   value = module.tls.root_ca_pem
 }
 
+output "akv_secret_id_root_ca_pem" {
+  description = "Secret ID of AKV secret for private root CA certificate"
+  value       = module.keyvault.akv_secret_id_root_ca_pem
+}
+
 output "shared_san" {
   value = module.tls.root_ca_pem
 }

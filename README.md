@@ -30,6 +30,7 @@ terraform plan -var-file=variables/$VAULT_ENV.tfvars
 ```
 ## TODO
 * Update/add descriptions for all variables and outputs
+* Add managed & encrypted storage for keyvault
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

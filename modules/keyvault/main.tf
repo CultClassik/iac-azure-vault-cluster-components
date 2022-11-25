@@ -34,6 +34,10 @@ resource "azurerm_key_vault_key" "vault" {
     "unwrapKey",
     "wrapKey",
   ]
+
+  depends_on = [
+    azurerm_key_vault_access_policy.owner
+  ]
 }
 
 # -----------------------------------------------------------------------------
@@ -44,6 +48,10 @@ resource "azurerm_key_vault_secret" "vault" {
   name         = "${var.resource_name_prefix}-vault-vm-tls"
   tags         = var.common_tags
   value        = var.vault_server_certificate
+
+  depends_on = [
+    azurerm_key_vault_access_policy.owner
+  ]
 }
 
 # -----------------------------------------------------------------------------
@@ -75,6 +83,11 @@ resource "azurerm_key_vault_certificate" "vault_server" {
       content_type = "application/x-pkcs12"
     }
   }
+
+  depends_on = [
+    azurerm_key_vault_access_policy.owner
+  ]
+
 }
 
 # -----------------------------------------------------------------------------
@@ -85,4 +98,9 @@ resource "azurerm_key_vault_secret" "root_ca_pem" {
   name         = "${var.resource_name_prefix}-vault-root-ca-pem"
   tags         = var.common_tags
   value        = var.root_ca_pem
+
+  depends_on = [
+    azurerm_key_vault_access_policy.owner
+  ]
+
 }

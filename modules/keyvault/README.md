@@ -26,6 +26,7 @@ No modules.
 | [azurerm_key_vault.akv](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault) | resource |
 | [azurerm_key_vault_access_policy.owner](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
 | [azurerm_key_vault_access_policy.readers](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_access_policy) | resource |
+| [azurerm_key_vault_certificate.root_ca_pfx](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_certificate.vault_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_key.vault](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_key) | resource |
 | [azurerm_key_vault_secret.root_ca_pem](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault_secret) | resource |
@@ -48,6 +49,7 @@ No modules.
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Azure resource group in which resources will be deployed | <pre>object({<br>    name     = string<br>    location = string<br>  })</pre> | n/a | yes |
 | <a name="input_resource_name_prefix"></a> [resource\_name\_prefix](#input\_resource\_name\_prefix) | Prefix applied to resource names | `string` | `"dev"` | no |
 | <a name="input_root_ca_pem"></a> [root\_ca\_pem](#input\_root\_ca\_pem) | The private root CA PEM to be used by the AGW | `string` | n/a | yes |
+| <a name="input_root_ca_pfx"></a> [root\_ca\_pfx](#input\_root\_ca\_pfx) | The private root CA PEM to be used by the AGW | `string` | n/a | yes |
 | <a name="input_user_supplied_key_vault_key_name"></a> [user\_supplied\_key\_vault\_key\_name](#input\_user\_supplied\_key\_vault\_key\_name) | (Optional) User-provided Key Vault Key name. Providing this will disable the generation of a Key Vault Key used for Vault auto-unseal | `string` | `null` | no |
 | <a name="input_vault_nodes_ssh_private_key"></a> [vault\_nodes\_ssh\_private\_key](#input\_vault\_nodes\_ssh\_private\_key) | ssh private key for the vault cluster nodes | `string` | n/a | yes |
 | <a name="input_vault_nodes_ssh_public_key"></a> [vault\_nodes\_ssh\_public\_key](#input\_vault\_nodes\_ssh\_public\_key) | ssh public key for the vault cluster nodes | `string` | n/a | yes |

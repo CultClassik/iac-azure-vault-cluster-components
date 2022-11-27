@@ -111,7 +111,7 @@ resource "azurerm_key_vault_secret" "root_ca_pfx" {
   key_vault_id = azurerm_key_vault_access_policy.owner.key_vault_id
   name         = "${var.resource_name_prefix}-vault-root-ca-pfx"
   tags         = var.common_tags
-  value        = var.root_ca_pfx
+  value        = base64encode(var.root_ca_pfx)
 
   depends_on = [
     azurerm_key_vault_access_policy.owner

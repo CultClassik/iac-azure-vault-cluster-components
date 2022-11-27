@@ -45,7 +45,6 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_root_ca_pem"></a> [root\_ca\_pem](#output\_root\_ca\_pem) | n/a |
-| <a name="output_root_ca_pfx"></a> [root\_ca\_pfx](#output\_root\_ca\_pfx) | n/a |
 | <a name="output_shared_san"></a> [shared\_san](#output\_shared\_san) | n/a |
 | <a name="output_vault_server_cert_pfx"></a> [vault\_server\_cert\_pfx](#output\_vault\_server\_cert\_pfx) | n/a |
 <!-- END_TF_DOCS -->

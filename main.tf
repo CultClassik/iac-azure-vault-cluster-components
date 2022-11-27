@@ -63,5 +63,4 @@ module "keyvault" {
   bastion_ssh_public_key           = tls_private_key.bastion.public_key_openssh
   keyvault_readers                 = var.keyvault_readers
   root_ca_pem                      = module.tls.root_ca_pem
-  root_ca_pfx                      = module.tls.root_ca_pfx
 }

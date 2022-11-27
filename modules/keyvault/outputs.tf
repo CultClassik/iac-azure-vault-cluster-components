@@ -22,7 +22,3 @@ output "akv_secret_id_root_ca_pem" {
   value       = azurerm_key_vault_secret.root_ca_pem.versionless_id
 }
 
-output "akv_secret_id_root_ca_pfx" {
-  description = "Secret ID of AKV certificate for private root CA certificate"
-  value       = azurerm_key_vault_certificate.root_ca_pfx.versionless_id
-}

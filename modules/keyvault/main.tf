@@ -103,39 +103,3 @@ resource "azurerm_key_vault_secret" "root_ca_pem" {
     azurerm_key_vault_access_policy.owner
   ]
 }
-
-# -----------------------------------------------------------------------------
-# The private root CA PEM to be stored in AKV certificate for use by AGW
-# -----------------------------------------------------------------------------
-resource "azurerm_key_vault_certificate" "root_ca_pfx" {
-  key_vault_id = azurerm_key_vault_access_policy.owner.key_vault_id
-  name         = "${var.resource_name_prefix}-vault-root-ca-pem"
-  tags         = var.common_tags
-
-  certificate {
-    contents = var.root_ca_pfx
-    password = ""
-  }
-
-  certificate_policy {
-    issuer_parameters {
-      name = "Self"
-    }
-
-    key_properties {
-      exportable = true
-      key_size   = 2048
-      key_type   = "RSA"
-      reuse_key  = false
-    }
-
-    secret_properties {
-      content_type = "application/x-pkcs12"
-    }
-  }
-
-  depends_on = [
-    azurerm_key_vault_access_policy.owner
-  ]
-
-}

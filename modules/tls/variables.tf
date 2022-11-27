@@ -25,7 +25,7 @@ variable "resource_name_prefix" {
 }
 
 variable "dns_zone_name" {
-  description = "The full DNS zone name to use when creating a ACME certificate"
+  description = "The full DNS zone name to use when creating TLS certificates"
 }
 
 variable "vault_cluster_host_name" {

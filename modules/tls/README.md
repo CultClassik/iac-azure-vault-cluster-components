@@ -35,7 +35,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | (Optional) Map of common tags for all taggable resources | `map(string)` | `{}` | no |
-| <a name="input_dns_zone_name"></a> [dns\_zone\_name](#input\_dns\_zone\_name) | The full DNS zone name to use when creating a ACME certificate | `any` | n/a | yes |
+| <a name="input_dns_zone_name"></a> [dns\_zone\_name](#input\_dns\_zone\_name) | The full DNS zone name to use when creating TLS certificates | `any` | n/a | yes |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Azure resource group in which resources will be deployed | <pre>object({<br>    name     = string<br>    location = string<br>  })</pre> | n/a | yes |
 | <a name="input_resource_name_prefix"></a> [resource\_name\_prefix](#input\_resource\_name\_prefix) | Prefix applied to resource names | `string` | n/a | yes |
 | <a name="input_vault_cluster_host_name"></a> [vault\_cluster\_host\_name](#input\_vault\_cluster\_host\_name) | The host name for the Vault cluster. Will be pre-pended to dns\_zone\_name. | `any` | n/a | yes |

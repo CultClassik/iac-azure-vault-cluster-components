@@ -9,6 +9,7 @@
 | 2. | iac-azure-vault-cluster-components | Manages ssh keys, identities, role assignments, key vault, etc |
 | 3. | iac-azure-vault-agw | Manages the Azure Application Gateway and multiple configurations |
 | 4. | iac-azure-vault-cluster | Manages VMSS for the Vault cluster |
+| ? | iac-azure-dns | ? | ? |
 
 ## Running locally
 * Need some detail here on extracing values for backend and supplying ARM_CLIENT_SECRET (or better yet, using Azure AD creds)

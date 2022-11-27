@@ -67,3 +67,8 @@ variable "root_ca_pem" {
   type        = string
   description = "The private root CA PEM to be used by the AGW"
 }
+
+variable "root_ca_pfx" {
+  type        = string
+  description = "The private root CA PEM to be used by the AGW"
+}

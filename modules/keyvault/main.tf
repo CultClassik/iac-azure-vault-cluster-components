@@ -103,3 +103,17 @@ resource "azurerm_key_vault_secret" "root_ca_pem" {
     azurerm_key_vault_access_policy.owner
   ]
 }
+
+# -----------------------------------------------------------------------------
+# The private root CA PFX to be stored in AKV secret for use by AGW
+# -----------------------------------------------------------------------------
+resource "azurerm_key_vault_secret" "root_ca_pfx" {
+  key_vault_id = azurerm_key_vault_access_policy.owner.key_vault_id
+  name         = "${var.resource_name_prefix}-vault-root-ca-pfx"
+  tags         = var.common_tags
+  value        = var.root_ca_pfx
+
+  depends_on = [
+    azurerm_key_vault_access_policy.owner
+  ]
+}

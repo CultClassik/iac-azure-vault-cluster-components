@@ -23,7 +23,7 @@ repos:
       args:
         - "--module"
         - "--config=.tflint.hcl"
-    - id: terraform-validate
+    # - id: terraform-validate
 
 - repo: https://github.com/terraform-docs/terraform-docs
   rev: "v0.16.0"

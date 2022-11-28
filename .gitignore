@@ -35,3 +35,6 @@ override.tf.json
 .dccache
 secrets
 *.plan
+
+# copied backend files from backends/
+backend_*.tf

@@ -72,6 +72,7 @@ terraform plan -var-file=variables/$VAULT_ENV.tfvars
 | <a name="input_az_sub_id"></a> [az\_sub\_id](#input\_az\_sub\_id) | Azure subscription ID to create resources in | `string` | n/a | yes |
 | <a name="input_dns_zone_name"></a> [dns\_zone\_name](#input\_dns\_zone\_name) | The DNS zone name the Vault cluster will use | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | production or nonprod | `string` | n/a | yes |
+| <a name="input_git_repo"></a> [git\_repo](#input\_git\_repo) | The name of the IAC repo that manages these resources | `string` | n/a | yes |
 | <a name="input_keyvault_readers"></a> [keyvault\_readers](#input\_keyvault\_readers) | Map of objects IDs to grant read access on certificates and secrets for.<br>Ex:<br>{ devops = "8f2fccad-59de-4699-8e72-33adea4bcc8b" } | `map(string)` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | n/a | yes |
 

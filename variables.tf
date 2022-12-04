@@ -25,3 +25,8 @@ Ex:
 { devops = "8f2fccad-59de-4699-8e72-33adea4bcc8b" }
 EOF
 }
+
+variable "git_repo" {
+  type        = string
+  description = "The name of the IAC repo that manages these resources"
+}

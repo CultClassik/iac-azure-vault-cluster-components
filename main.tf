@@ -9,7 +9,7 @@ locals {
   resource_name_prefix = "hcv"
   resource_base_name   = "${local.resource_name_prefix}-RESTYPE-${var.environment}-${var.location}"
   tags = {
-    repo_name   = "verituity/devops/azure-infrastructure/iac-azure-vault-cluster-components",
+    git_repo    = var.git_repo
     environment = var.environment,
     location    = var.location
     product     = "vault"

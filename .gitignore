@@ -38,3 +38,4 @@ secrets
 
 # copied backend files from backends/
 backend_*.tf
+backend.tf

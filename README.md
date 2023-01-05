@@ -32,6 +32,7 @@ terraform plan -var-file=variables/$VAULT_ENV.tfvars
 ## TODO
 * Update/add descriptions for all variables and outputs
 * Add managed & encrypted storage for keyvault
+* Internal tls certs good for 1 year - this needs to be monitored and automated i.e. scheduled pipeline run to update the certs or use letsencrypt etc
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

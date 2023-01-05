@@ -16,7 +16,7 @@ resource "tls_self_signed_cert" "ca" {
     common_name = "ca.vault.server.com"
   }
 
-  validity_period_hours = 720 # 30 days
+  validity_period_hours = 8760 # 1 year
 
   allowed_uses = [
     "cert_signing",

@@ -1,4 +1,4 @@
-image: registry.gitlab.com/verituity/devops/docker-images/go-build/terraform:latest
+image: registry.gitlab.com/diehlabs/devops/docker-images/go-build/terraform:latest
 
 workflow:
   rules:
@@ -20,7 +20,7 @@ include:
     # rules:
     #   - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
     #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  - project: 'verituity/devops/cicd-templates'
+  - project: 'diehlabs/devops/cicd-templates'
     file: '/infra/terraform-jobs.yml'
     ref: v0.4-stable
 
